@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --email-template-width: 660px;
+        --primary-bg-color: #ffffff;
+        --primary-content-bg: #fafafa;
+        --font-color: #333333;
+        --link-color: #4073d4;
+        --heading-color: #666666;
+        --font-family: "Inter", sans-serif;
+        --letter-spacing: -0.8px;
+        --font-size-10: 10px;
+        --font-size-12: 12px;
+        --font-size-14: 14px;
+        --secondary-font-size-16: 16px;
+        --heading-font-size-24: 24px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Global Styles */
+      a {
+        color: var(--link-color);
+      }
+
+      .email__container {
+        width: 100%;
+        margin: 0 auto;
+        font-family: var(--font-family);
+        max-width: var(--email-template-width);
+        padding: 1rem 0;
+      }
+      .heading__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        margin-bottom: 1rem;
+      }
+      .ac__icon {
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+      }
+      .heading__tag {
+        font-size: var(--heading-font-size);
+        font-weight: 300;
+        letter-spacing: var(--letter-spacing);
+        color: var(--font-color);
+      }
+      .heading__text {
+        font-size: var(--font-size-14);
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--font-color);
+        padding: 2rem 20px;
+        text-align: center;
+      }
+
+      /* Table Styling */
+      table {
+        width: 100%;
+        border-spacing: 0;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 1rem 10px;
+        text-align: left;
+        border: 0.5px solid var(--primary-bg-color);
+        background-color: var(--primary-content-bg);
+      }
+      th {
+        font-size: var(--font-size-14);
+        font-weight: bold;
+        color: var(--heading-color);
+        text-transform: uppercase;
+        letter-spacing: var(--letter-spacing);
+      }
+      td {
+        font-size: var(--font-size-14);
+        font-weight: 400;
+        color: var(--font-color);
+
+        padding-left: 2rem;
+      }
+
+      /* Custom Headings of the table template */
+      .table__content td:nth-child(1),
+      .table__content td:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email__container">
+      <div class="heading__container">
+        <img
+          class="ac__icon"
+          src="https://cdn-icons-png.flaticon.com/512/0/747.png"
+          alt="ac icon"
+        />
+        <h1 class="heading__tag">Receipt</h1>
+      </div>
+      <p class="heading__text">
+        Save 10% on all your Apple purchases with Apple Card.<sup>1</sup>
+        <a href="#"> Apply and use in minutes.</a><sup>2</sup>
+      </p>
+
+      <!-- Email Content -->
+      <!-- Table  -->
+      <div class="table__content">
+        <table>
+          <tr>
+            <td colspan="2">
+              <span>Account</span>
+              <a href="#">appleuseremail@email.com</a>
+            </td>
+            <td rowspan="3">
+              <span>BILLED TO</span>
+              <p>Visa .... 7976 (Apple Pay)</p>
+              <p>Peter Parker</p>
+              <p>123 Fixed Door St</p>
+              <p>San Antonio, TX 78249</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span>DATE</span>
+              <span>Feb 5, 2025</span>
+            </td>
+            <tr>
+              <td>
+                <span>ORDER NUMBER</span>
+                <a href="#">MTFJNSB469</a>
+              </td>
+              <td>
+                <span>ORDER NUMBER</span>
+                <a href="#">MTFJNSB469</a>
+              </td>
+            </tr>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
