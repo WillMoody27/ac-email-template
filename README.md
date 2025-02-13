@@ -10,7 +10,6 @@ A fully responsive and production-ready email template designed for transactiona
 - Cross-client compatibility with Gmail, Outlook, Apple Mail, and more
 - Uses inline styles for consistent rendering across all email clients
 - Table-based layout for reliable email structure
-- Dark mode considerations for improved visibility
 - Optimized for deliverability by following email best practices
 
 ---
@@ -62,16 +61,4 @@ To use this email template, follow these steps:
 A live preview of the email template can be found at:
 
 [View Live Email Template](https://responsive-email-template-2025.netlify.app/)
-
----
-
-## License
-
-This project is licensed under the MIT License. You are free to use and modify it for personal or commercial projects.
-
----
-
-## Contact
-
-For any questions or feedback, feel free to reach out via GitHub or email.
 
