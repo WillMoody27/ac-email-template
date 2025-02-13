@@ -61,7 +61,7 @@ To use this email template, follow these steps:
 
 A live preview of the email template can be found at:
 
-[View Live Email Template]([https://responsive-email-template-2025.netlify.app/](https://responsive-email-template-2025.netlify.app/))
+[View Live Email Template]([https://responsive-email-template-2025.netlify.app/](https://responsive-email-template-2025.netlify.app/)
 
 ---
 
