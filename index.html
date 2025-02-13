@@ -18,7 +18,7 @@
         --font-color: #333333;
         --link-color: #4073d4;
         --heading-color: #666666;
-        --font-family: "Inter", sans-serif;
+        --font-family: "Inter", Arial, sans-serif;
         --letter-spacing: -0.8px;
         --font-size-10: 10px;
         --font-size-12: 12px;
@@ -37,40 +37,6 @@
         color: var(--link-color);
       }
 
-      .email__container {
-        width: 100%;
-        margin: 0 auto;
-        font-family: var(--font-family);
-        max-width: var(--email-template-width);
-        padding: 1rem 0;
-      }
-      .heading__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        margin-bottom: 1rem;
-      }
-      .ac__icon {
-        width: 34px;
-        height: 34px;
-        object-fit: contain;
-      }
-      .heading__tag {
-        font-size: var(--heading-font-size);
-        font-weight: 300;
-        letter-spacing: var(--letter-spacing);
-        color: var(--font-color);
-      }
-      .heading__text {
-        font-size: var(--font-size-14);
-        font-weight: 400;
-        line-height: 1.5;
-        color: var(--font-color);
-        padding: 2rem 20px;
-        text-align: center;
-      }
-
       /* Table Styling */
       table {
         width: 100%;
@@ -78,85 +44,606 @@
         margin-top: 20px;
       }
       th,
-      td {
+      .table__data__row td {
         padding: 1rem 10px;
         text-align: left;
-        border: 0.5px solid var(--primary-bg-color);
-        background-color: var(--primary-content-bg);
+      }
+      th,
+      .table__data__row__2 td {
+        padding: 1rem 10px;
+        text-align: left;
       }
       th {
         font-size: var(--font-size-14);
-        font-weight: bold;
+        font-weight: 400;
         color: var(--heading-color);
         text-transform: uppercase;
+        text-align: left;
         letter-spacing: var(--letter-spacing);
       }
       td {
         font-size: var(--font-size-14);
         font-weight: 400;
         color: var(--font-color);
-
-        padding-left: 2rem;
+        padding-left: 1rem;
       }
 
-      /* Custom Headings of the table template */
-      .table__content td:nth-child(1),
-      .table__content td:nth-child(3) {
-        display: flex;
-        flex-direction: column;
+      td span:nth-child(1) {
+        font-size: var(--font-size-12);
+        font-weight: 400;
+        color: var(--heading-color);
+        text-transform: uppercase;
+      }
+
+      /* Move to Inline Below This Line */
+      .table__spacer {
+        height: 35px;
+      }
+      .table__spacer__main {
+        height: 30px;
+      }
+
+      .author {
+        color: var(--font-color) !important;
+        font-weight: 600 !important;
+      }
+      .meta__data {
+        font-size: var(--font-size-12);
+        font-weight: 400;
+        color: var(--heading-color);
+      }
+      .meta__data__link {
+        font-size: var(--font-size-12);
+        font-weight: 400;
+        color: var(--link-color);
+      }
+
+      .inner__table {
+        width: 10px;
+        margin-left: auto;
+        border-spacing: 0;
+      }
+
+      .sub__heading {
+        color: var(--heading-color);
+      }
+      .total__value {
+        width: 150px;
+        text-align: right;
+        padding-left: 100px;
+      }
+      .inner__table__total {
+        margin-left: auto;
+      }
+      .inner__table__total td {
+        border: 0.5px solid #d6d6d6;
+        padding: 1rem 0rem;
+      }
+      /* Move to Inline above This Line */
+
+      .inner__table__total td:nth-child(1) {
+        padding-right: 1rem;
+        border-left: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: var(--font-size-12);
+        color: var(--heading-color);
+      }
+      .inner__table__total td:nth-child(2) {
+        padding-right: 1rem;
+        border-right: 0;
+        font-weight: 600;
+      }
+
+      .table--1 {
+        display: none !important;
+        visibility: hidden !important;
+      }
+      .table--2 {
+        display: table !important;
+        visibility: visible !important;
+      }
+
+      /* Responsive Styling */
+      @media (max-width: 650px) {
+        .table--1 {
+          display: table !important;
+          visibility: visible !important;
+        }
+        .table--2 {
+          display: none !important;
+          visibility: hidden !important;
+        }
+
+        .book__image {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .table-row__content {
+          height: 50px !important;
+        }
+      }
+      .table__head {
+        text-align: center;
+      }
+      .table__data__row {
+        text-align: center;
+        padding: 1rem 0;
       }
     </style>
   </head>
-  <body>
-    <div class="email__container">
-      <div class="heading__container">
-        <img
-          class="ac__icon"
-          src="https://cdn-icons-png.flaticon.com/512/0/747.png"
-          alt="ac icon"
-        />
-        <h1 class="heading__tag">Receipt</h1>
-      </div>
-      <p class="heading__text">
-        Save 10% on all your Apple purchases with Apple Card.<sup>1</sup>
-        <a href="#"> Apply and use in minutes.</a><sup>2</sup>
-      </p>
+  <body style="background: #efefef">
+    <div
+      class="email__container"
+      style="
+        width: 100%;
+        max-width: 680px;
+        margin: 1rem auto;
+        padding: 1rem 1.2rem;
+        border: 1px solid #ebebeb;
+        background: #ffffff;
+        font-family: 'Inter', Arial, sans-serif;
+      "
+    >
+      <table style="width: 100%; border-spacing: 0; padding: 1rem 0">
+        <tr>
+          <td style="padding: 0 1rem; vertical-align: middle">
+            <a href="#">
+              <img
+                class="ac__icon"
+                src="https://i.ibb.co/twR7NCPv/logo-shape-swirl.png"
+                alt="logo-shape-swirl"
+                style="height: 50px; width: 50px"
+              />
+            </a>
+          </td>
+          <td
+            style="
+              font-size: 24px;
+              font-weight: bold;
+              color: #333;
+              padding: 1rem 2rem;
+              text-align: right;
+            "
+          >
+            Receipt
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan="2"
+            style="
+              font-size: 14px;
+              color: #555;
+              padding: 10px 1rem;
+              padding-top: 2rem;
+              text-align: center;
+            "
+          >
+            Save 10% on all your Vortex purchases with Vortex Card.<sup>1</sup>
+            <a href="#" style="color: #007bff; text-decoration: none">
+              Apply and use in minutes.</a
+            ><sup>2</sup>
+          </td>
+        </tr>
+      </table>
 
       <!-- Email Content -->
       <!-- Table  -->
-      <div class="table__content">
-        <table>
-          <tr>
-            <td colspan="2">
-              <span>Account</span>
-              <a href="#">appleuseremail@email.com</a>
-            </td>
-            <td rowspan="3">
-              <span>BILLED TO</span>
-              <p>Visa .... 7976 (Apple Pay)</p>
-              <p>Peter Parker</p>
-              <p>123 Fixed Door St</p>
-              <p>San Antonio, TX 78249</p>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <span>DATE</span>
-              <span>Feb 5, 2025</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <span>ORDER NUMBER</span>
-              <a href="#">MTFJNSB469</a>
-            </td>
-            <td>
-              <span>ORDER NUMBER</span>
-              <a href="#">MTFJNSB469</a>
-            </td>
-          </tr>
-        </table>
-      </div>
+
+      <table class="table--1" style="padding: 0 1rem">
+        <tr class="table-row">
+          <th class="table__head" style="width: 20px">Account</th>
+        </tr>
+
+        <tr>
+          <td class="table__data__row">
+            <a href="#" style="text-transform: lowercase; font-size: 16px">
+              vortexuseremail@email.com
+            </a>
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <th class="table__head" style="width: 20px; background: #fafafa">
+            Billed To
+          </th>
+        </tr>
+        <tr>
+          <td class="table__data__row">
+            <p>Visa .... 5498 (Vortex Pay)</p>
+            <p>Peter Parker</p>
+            <p>123 Fixed Door St</p>
+            <p>San Antonio, TX 78249</p>
+          </td>
+        </tr>
+        <tr class="table-row">
+          <th class="table__head" style="background: #fafafa">Date</th>
+        </tr>
+        <tr class="table-row__content">
+          <td class="table__data__row">Feb 5, 2025</td>
+        </tr>
+        <tr class="table-row">
+          <th class="table__head" style="background: #fafafa">Order ID</th>
+        </tr>
+        <tr>
+          <td class="table__data__row">
+            <a href="#">MTFJNSB469</a>
+          </td>
+        </tr>
+        <tr class="table-row">
+          <th class="table__head" style="background: #fafafa">Document No.</th>
+        </tr>
+        <tr>
+          <td class="table__data__row">
+            <a href="#">1234567890</a>
+          </td>
+        </tr>
+        <tr class="table-row">
+          <th class="table__head" style="background: #fafafa">Book Details</th>
+        </tr>
+        <tr>
+          <td class="table__data__row">
+            <span style="font-size: 14px; color: rgb(53, 53, 53)"
+              >The Design of Everyday Things</span
+            >
+            <br />
+            <br />
+            <span>Don Norman</span>
+            <br />
+            <br />
+            <span>Audiobook</span>
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <th class="table__head" style="background: #fafafa">Price</th>
+        </tr>
+        <tr>
+          <td class="table__data__row">$19.99</td>
+        </tr>
+        <tr class="table-row">
+          <th class="table__head" style="background: #fafafa">Subtotal</th>
+        </tr>
+        <tr>
+          <td class="table__data__row">$19.99</td>
+        </tr>
+        <tr class="table-row">
+          <th class="table__head" style="background: #fafafa">Tax</th>
+        </tr>
+        <tr>
+          <td class="table__data__row">$1.70</td>
+        </tr>
+        <tr class="table-row">
+          <th class="table__head" style="background: #fafafa">Total</th>
+        </tr>
+        <tr>
+          <td class="table__data__row" style="font-weight: 600">$21.69</td>
+        </tr>
+        <tr>
+          <td style="height: 80px; text-align: center">
+            <img
+              class="book__image"
+              style="width: 200px; margin: 3rem auto"
+              src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1711564631i/17290807.jpg"
+              alt="book cover"
+            />
+          </td>
+        </tr>
+      </table>
+
+      <table class="table--2" style="width: 100%; padding: 0 1rem">
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <tr class="table__data__row">
+              <td
+                colspan="2"
+                style="
+                  background: #fafafa;
+                  padding-left: 1rem;
+                  border: 0.5px solid #ffffff;
+                "
+              >
+                <span class="row__heading">Account</span>
+                <br />
+                <a href="#">Vortexuseremail@email.com</a>
+              </td>
+              <td
+                rowspan="3"
+                style="
+                  background: #fafafa;
+                  padding-left: 1rem;
+                  border: 0.5px solid #ffffff;
+                "
+              >
+                <span>BILLED TO</span>
+                <br />
+                <p>Visa .... 5498 (Vortex Pay)</p>
+                <p>Peter Parker</p>
+                <p>123 Fixed Door St</p>
+                <p>San Antonio, TX 78249</p>
+              </td>
+            </tr>
+            <tr class="table__data__row">
+              <td
+                colspan="2"
+                style="
+                  background: #fafafa;
+                  padding-left: 1rem;
+                  border: 0.5px solid #ffffff;
+                "
+              >
+                <span class="row__heading">Date</span>
+                <br />
+                <span>Feb 5, 2025</span>
+              </td>
+            </tr>
+
+            <tr class="table__data__row">
+              <td
+                style="
+                  background: #fafafa;
+                  padding-left: 1rem;
+                  border: 0.5px solid #ffffff;
+                "
+              >
+                <span class="row__heading">Order ID</span>
+                <br />
+                <a href="#">MTFJNSB469</a>
+              </td>
+              <td style="background: #fafafa; border: 0.5px solid #ffffff">
+                <span class="row__heading">Document No.</span>
+                <br />
+                <a href="#">1234567890</a>
+              </td>
+            </tr>
+          </td>
+        </tr>
+        <tr class="table__spacer">
+          <td></td>
+        </tr>
+        <tr class="table__data__row__2">
+          <td
+            colspan="3"
+            style="font-weight: 600; background: #fafafa; padding-left: 1rem"
+          >
+            Audiobook Store
+          </td>
+        </tr>
+        <tr height="15">
+          <td colspan="3"></td>
+        </tr>
+        <!-- Order Details -->
+        <tr class="table__data__row__main">
+          <td
+            width="50px"
+            class="book__cover__img"
+            style="text-align: right; vertical-align: top"
+          >
+            <img
+              class="book__cover book__image"
+              src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1711564631i/17290807.jpg"
+              alt=""
+              style="width: 70px; height: auto"
+            />
+          </td>
+          <td>
+            <span class="row__heading author"
+              >The Design of Everyday Things</span
+            >
+            <br />
+            <p class="meta__data">Don Norman</p>
+            <p class="meta__data">Audiobook</p>
+            <p class="meta__data">Peter's iPhone</p>
+            <a href="#" class="meta__data__link"> Report a Problem </a>
+          </td>
+          <td
+            class="price__text value__style"
+            style="padding-right: 1rem; text-align: right; vertical-align: top"
+          >
+            <p>$19.99</p>
+          </td>
+        </tr>
+        <tr>
+          <td
+            colspan="3"
+            class="price__text tax__text"
+            style="padding-right: 1rem; text-align: right; vertical-align: top"
+          >
+            <table class="inner__table">
+              <tbody>
+                <tr>
+                  <td class="sub__heading">Subtotal</td>
+                  <td class="value__style" style="padding-right: 0">$19.99</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="sub__heading">Tax</td>
+                  <td class="value__style" style="padding-right: 0">$1.70</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr class="total__row">
+          <td colspan="3" style="text-align: right; padding: 1rem 0">
+            <table class="inner__table__total">
+              <tbody>
+                <tr>
+                  <td style="padding-right: 1rem">Total</td>
+                  <td
+                    class="total__value"
+                    style="padding-right: 1rem; font-weight: 600"
+                  >
+                    $21.69
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="height: 80px"></td>
+        </tr>
+      </table>
+
+      <!-- End of Table -->
+      <table>
+        <tr>
+          <td
+            class="ac__lower__content__td"
+            colspan="3"
+            style="height: 50px; margin: 0 auto; text-align: center"
+          >
+            <table style="margin: auto">
+              <tbody>
+                <tr>
+                  <td style="width: 50%; text-align: right">
+                    <a href="#">
+                      <img
+                        class="ac__icon"
+                        style="height: 34px; width: 34px"
+                        src="https://i.ibb.co/twR7NCPv/logo-shape-swirl.png"
+                        alt="logo-shape-swirl"
+                      />
+                    </a>
+                  </td>
+                  <td
+                    style="
+                      vertical-align: middle;
+                      text-align: left;
+                      padding-left: 0.2rem;
+                    "
+                  >
+                    <span style="font-size: 16px; text-transform: capitalize"
+                      >Card</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="lower__table" colspan="3">
+                    Save 10% on all your Vortex purchases.
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="ac__icon__td lower__table"
+                    style="padding: 0.5rem; text-align: center"
+                    colspan="3"
+                  >
+                    <a
+                      href="#"
+                      style="
+                        vertical-align: middle;
+                        padding-left: 0.2rem;
+                        text-decoration: none;
+                      "
+                    >
+                      <img
+                        class="ac__icon"
+                        src="https://i.ibb.co/twR7NCPv/logo-shape-swirl.png"
+                        alt="logo-shape-swirl"
+                        style="width: 34px; height: 34px"
+                      />
+                    </a>
+                    <span>
+                      <a href="#" style="color: #007bff"
+                        >Apply and use in minutes</a
+                      >
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="height: 80px"></td>
+        </tr>
+        <tr>
+          <td
+            colspan="3"
+            style="
+              height: 80px;
+              border-top: 1px solid #ffffff;
+              height: 20px;
+              padding: 1.4rem 2rem;
+            "
+          >
+            1. 10% Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vivamus accumsan, justo et fringilla tempor, purus dui consectetur
+            neque. 10% dolor sit amet, consectetur adipiscing elit. Vivamus
+            accumsan, justo et fringilla tempor, purus dui consectetur neque.
+            Adipiscing elit. Vivamus accumsan, justo.
+            <br />
+            <br />
+            2. Ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Vivamus accumsan, justo et fringilla tempor, purus
+            dui consectetur neque. Dolor sit amet, consectetur adipiscing elit.
+            Vivamus accumsan, justo et fringilla tempor, purus dui consectetur
+            neque. Adipiscing elit. Vivamus accumsan, justo.
+            <br />
+            <br />
+            Consectetur adipiscing elit. Vivamus accumsan. A card is issued by
+            consectetur adipiscing elit. Vivamus accumsan. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit.
+            <br />
+            <br />
+            Vivamus accumsan, justo et fringilla tempor, purus dui consectetur
+            neque. 10% dolor sit amet, consectetur adipiscing elit.
+            <a href="#">Vivamus accumsan</a>,tempor, purus dui consectetur justo
+            et fringilla tempor, purus dui consectetur neque. Dolor sit amet,
+            consectetur adipiscing elit. <a href="#">Vivamus accumsan</a>,
+            justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vivamus accumsan, justo et fringilla.
+          </td>
+        </tr>
+        <tr>
+          <td class="ac__lower__content__td" colspan="3" style="height: 50px">
+            <table>
+              <tbody>
+                <tr>
+                  <td
+                    class="lower__table"
+                    style="text-align: center; color: #666"
+                  >
+                    <a href="https://ibb.co/NgR8kYnJ"
+                      ><img
+                        class="ac__icon"
+                        src="https://i.ibb.co/twR7NCPv/logo-shape-swirl.png"
+                        alt="logo-shape-swirl"
+                        style="width: 34px; height: 34px"
+                    /></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">
+                    <span style="text-transform: capitalize"
+                      >Copyright ©2025 Vortex Inc.</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-bottom: 3rem; text-align: center">
+                    <a href="#">All rights reserved</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
